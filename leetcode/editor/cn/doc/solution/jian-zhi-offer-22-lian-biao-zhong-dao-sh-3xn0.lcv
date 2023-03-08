@@ -1,0 +1,30 @@
+* 
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode getKthFromEnd(ListNode head, int k) {
+        //表示当前是第几个节点
+        int i = 1;
+        //表示需要返回的节点(初始化指向头节点)
+        ListNode h = head;
+        while (head != null) {
+            //当前的节点减去k大于0说明h需要往后移动一个节点
+            if (i - k > 0){
+                h = h.next;
+            }
+            head = head.next;
+            i++;
+        }
+        return h;
+    }
+}
+```
+
